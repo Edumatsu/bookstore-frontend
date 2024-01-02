@@ -1,6 +1,4 @@
 import DashboardLayout from '@/views/Layout/DashboardLayout.vue';
-import AuthLayout from '@/views/Pages/AuthLayout.vue';
-
 import NotFound from '@/views/NotFoundPage.vue';
 
 const routes = [
@@ -40,7 +38,7 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "demo" */ '../views/Subjects/List/Subjects.vue')
-      },
+      }
     ]
   }
 ];
