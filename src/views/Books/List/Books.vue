@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-header class="pb-6 pb-8 pt-5 bg-gradient-success">
+    <base-header class="pb-6 pb-8 pt-5 bg-gradient-warning">
       <b-card>
         <b-row>
           <b-col xl="9" md="6">
@@ -8,7 +8,7 @@
           </b-col>
           
           <b-col xl="3" md="6" align="right">
-            <b-button v-on:click="showModal()" variant="primary">
+            <b-button v-on:click="showModal()" variant="warning">
               <i class=" mb-0 ni ni ni-fat-add"></i> 
               novo livro
             </b-button>

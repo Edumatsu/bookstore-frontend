@@ -9,7 +9,7 @@
         <b-col xl="3" md="6" align="right">
           <download-excel :data="tableData">
             <b-button v-on:click="confirmDelete(row)" variant="transparent">
-              <i title="Baixar" class="download-button mb-0 ni ni-cloud-download-95 text-success"></i> 
+              <i title="Baixar" class="download-button mb-0 ni ni-cloud-download-95 text-warning"></i> 
           </b-button>
           </download-excel>
         </b-col>

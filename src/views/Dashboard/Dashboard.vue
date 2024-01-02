@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <base-header class="pb-7 pt-5 bg-gradient-success">
+    <base-header class="pb-7 pt-5 bg-gradient-warning">
       <b-card>
         <b-row>
           <b-col>

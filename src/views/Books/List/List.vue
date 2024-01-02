@@ -171,7 +171,7 @@
                 <div class="row">
                   <div class="col-md-12 text-right">
                     <b-button type="button" v-on:click="hideModal()">Cancelar</b-button>
-                    <b-button type="submit" variant="primary">Salvar</b-button>
+                    <b-button type="submit" variant="warning">Salvar</b-button>
                   </div>
                 </div>
               </b-form>
