@@ -17,6 +17,20 @@
 import Vue from 'vue';
 import DashboardPlugin from './plugins/dashboard-plugin';
 import App from './App.vue';
+import money from 'v-money'
+import JsonExcel from "vue-json-excel";
+ 
+Vue.component("downloadExcel", JsonExcel);
+
+// money mask setup
+Vue.use(money, {
+  decimal: ',',
+  thousands: '.',
+  prefix: 'R$ ',
+  suffix: '',
+  precision: 2,
+  masked: true
+});
 
 // router setup
 import router from './routes/router';

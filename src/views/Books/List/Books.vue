@@ -8,7 +8,7 @@
           </b-col>
           
           <b-col xl="3" md="6" align="right">
-            <b-button href="/books/new" variant="primary">
+            <b-button v-on:click="showModal()" variant="primary">
               <i class=" mb-0 ni ni ni-fat-add"></i> 
               novo livro
             </b-button>
@@ -19,7 +19,7 @@
     <b-container fluid class="mt--7">
       <b-row>
         <b-col>
-          <list/>
+          <list ref="list"/>
         </b-col>
       </b-row>
     </b-container>
@@ -42,7 +42,12 @@
       return {
         pageTitle: 'Livros'
       };
-    }
+    },
+    methods: {
+      showModal() {
+        this.$refs.list.new();
+      }
+    },
   };
 </script>
 <style>
