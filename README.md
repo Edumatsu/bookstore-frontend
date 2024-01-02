@@ -20,7 +20,7 @@ git clone git@github.com:Edumatsu/bookstore-frontend.git
 
 Acessar o projeto:
 ```console
-cd bookstore-backend
+cd bookstore-frontend
 ```
 
 Copiar o .env.example para o .env do projeto:
