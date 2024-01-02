@@ -33,13 +33,13 @@
             </el-table-column>
 
             <el-table-column label="Ações"
-                            min-width="140px">
+                            min-width="140px" align="right">
                 <template v-slot="{row}">
                     <b-button size="sm" v-on:click="edit(row)" variant="transparent">
-                        <i title="Editar" class=" mb-0 ni ni-ruler-pencil text-primary"></i> 
+                        <i title="Editar" class="mb-0 ni ni-ruler-pencil text-primary"></i> 
                     </b-button>
                     <b-button size="sm" v-on:click="confirmDelete(row)" variant="transparent">
-                        <i title="Excluir" class=" mb-0 ni ni-fat-remove text-danger"></i> 
+                        <i title="Excluir" class="action-icon mb-0 ni ni-fat-remove text-danger"></i> 
                     </b-button>
                 </template>
             </el-table-column>
@@ -267,9 +267,6 @@
         ))
       },
       validateState(name) {
-        if (name == 'value') {
-          console.log(this.$v.form[name]);
-        }
         const { $dirty, $error } = this.$v.form[name];
         return $dirty ? !$error : null;
       },
@@ -289,6 +286,7 @@
         axios[method](path, form).then(response => {
           this.makeAlert('info', 'Informações registradas com sucesso!')
           this.$bvModal.hide("form")
+          this.loadData()
         })
 
       },
@@ -330,7 +328,7 @@
         setTimeout(() => this.alertShow = false, 5000);
       },
       confirmDelete(row) {
-        this.$bvModal.msgBoxConfirm(`Deseja realmente remover o Livro "${row.title}."?`, {
+        this.$bvModal.msgBoxConfirm(`Deseja realmente remover o Livro "${row.title}"?`, {
             title: 'Tem certeza?',
             size: 'sm',
             buttonSize: 'sm',
@@ -342,10 +340,12 @@
             centered: true
         })
         .then(value => {
-          axios.delete(`books/${row.id}`).then(response => {
-            this.makeAlert('info', 'Livro excluído com sucesso!')
-            this.loadData()
-          })
+          if (value) {
+            axios.delete(`books/${row.id}`).then(response => {
+              this.makeAlert('info', 'Livro excluído com sucesso!')
+              this.loadData()
+            })
+          }
         })
         .catch(err => {
             // An error occurred
@@ -354,3 +354,8 @@
     }
   }
 </script>
+<style scoped>
+.action-icon {
+  font-size: 18px;
+}
+</style>
