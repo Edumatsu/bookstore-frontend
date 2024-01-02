@@ -30,7 +30,7 @@ cp .env.example .env
 
 Modificar o .env incluindo a URL correta da API:
 ```console
-API_URL="http://localhost:8000/api"
+VUE_APP_API_URL="http://localhost:8000/api/"
 ```
 
 Executar o projeto no modo de desenvolvimento:
