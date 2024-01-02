@@ -3,19 +3,18 @@
   <b-card body-class="p-0" header-class="border-0">
     <template v-slot:header>
       <b-row align-v="center">
-        <b-col>
+        <b-col xl="9" md="6">
           <h3 class="mb-0">Livros por autor</h3>
+        </b-col>
+        <b-col xl="3" md="6" align="right">
+          <download-excel :data="tableData">
+            <b-button v-on:click="confirmDelete(row)" variant="transparent">
+              <i title="Baixar" class="download-button mb-0 ni ni-cloud-download-95 text-success"></i> 
+          </b-button>
+          </download-excel>
         </b-col>
       </b-row>
     </template>
-
-    <b-row align-v="center">
-      <b-col>
-        <download-excel :data="tableData">
-          <i title="Baixar" class=" mb-0 ni ni-fat-remove text-success"></i> 
-        </download-excel>
-      </b-col>
-    </b-row>
 
     <el-table class="table-responsive table"
               :data="tableData"
@@ -78,4 +77,7 @@
   }
 </script>
 <style>
+.download-button {
+  font-size: 22px;
+}
 </style>
